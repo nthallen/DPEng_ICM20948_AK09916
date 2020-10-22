@@ -271,7 +271,8 @@ bool DPEng_ICM20948::begin(icm20948AccelRange_t rngAccel, icm20948GyroRange_t rn
   // Write new ACCEL_CONFIG register value
   write8(ACCEL_CONFIG, reg1);
 
-  write8(ACCEL_SMPLRT_DIV_2, 0x14);
+  // write8(ACCEL_SMPLRT_DIV_2, 0x14);
+  write8(ACCEL_SMPLRT_DIV_2, 0x02); // Trying for 375 Hz (2.67 msec)
 	
   /* Set GYRO_CONFIG_1 to selected DPS Range - Default value 0x01 (250 dps)
   =====================================================================
